@@ -117,7 +117,14 @@ public class FileController {
 
 		} catch (IOException e) {
 			e.printStackTrace();
-		}
+		} finally {
+            try {
+                ts.close();
+                ss.close();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
 		return view;
 	}
 
@@ -162,6 +169,7 @@ public class FileController {
                     } else {
                         return "";
                     }
+
                 });
                 results.add(result);
             }
