@@ -4,13 +4,14 @@
 <head>
 <meta charset="UTF-8" />
 <title>Insert title here</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" crossorigin="anonymous"/>
+    <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/4.0.0/css/bootstrap.min.css"
+          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous"/>
     <link href="fileinput/css/fileinput.css" media="all" rel="stylesheet" type="text/css" />
 </head>
 <body>
     <h1 th:inlines="text">文件上传</h1>
     <form action="fileUpload" method="post" enctype="multipart/form-data">
-        <p style="width: 20%;">选择文件: <input id="file" type="file" name="fileName"/></p>
+        <p style="width: 30%;">选择文件: <input id="file" type="file" name="fileName"/></p>
         <p><input type="submit" value="提交"/></p>
     </form>
 </body>
@@ -20,7 +21,7 @@
 <script type="text/javascript"  th:src="@{/fileinput/js/locales/zh.js}"></script>
 <script type="text/javascript">
 
-    $('#file').fileinput();
+    $('#file').fileinput({language: 'en', dropZoneTitle: "上传图片"});
 
 </script>
 
